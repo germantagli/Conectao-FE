@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iniciar sesión · TruequeVE</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./styles.css">
+    <meta name="color-scheme" content="light dark">
+</head>
+<body>
+    <!-- Top app bar (hamburguesa solo en mobile) -->
+    <header class="topbar">
+        <button class="hamburger" aria-label="Abrir menú" aria-controls="mobile-menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a href="#" class="topbar__brand" aria-label="Inicio TruequeVE">
+            <svg width="28" height="28" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <rect x="3" y="3" width="42" height="42" rx="10" fill="url(#g)"/>
+                <path d="M14 24c0-5.523 4.477-10 10-10a10 10 0 1 1-7.071 2.929" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                    <linearGradient id="g" x1="3" y1="3" x2="45" y2="45" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#1c88f3"/>
+                        <stop offset="1" stop-color="#00b894"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span>TruequeVE</span>
+        </a>
+    </header>
+
+    <nav id="mobile-menu" class="mobile-menu" hidden>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Crear cuenta</a></li>
+            <li><a href="#">Ayuda</a></li>
+        </ul>
+    </nav>
+
+    <main class="auth-wrapper">
+        <section class="auth-card" role="region" aria-labelledby="auth-title">
+            <div class="auth-card__logo" aria-hidden="true">
+                <svg width="56" height="56" viewBox="0 0 48 48" fill="none" role="img" aria-label="TruequeVE">
+                    <rect x="3" y="3" width="42" height="42" rx="10" fill="url(#g2)"/>
+                    <path d="M14 24c0-5.523 4.477-10 10-10a10 10 0 1 1-7.071 2.929" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                    <defs>
+                        <linearGradient id="g2" x1="3" y1="3" x2="45" y2="45" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#1c88f3"/>
+                            <stop offset="1" stop-color="#00b894"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <h1 id="auth-title">Iniciar sesión</h1>
+            </div>
+
+            <form class="auth-form" autocomplete="on" novalidate>
+                <!-- Teléfono (+58) -->
+                <div class="input-group">
+                    <label for="phone">Teléfono</label>
+                    <div class="input-with-prefix">
+                        <span class="prefix" aria-hidden="true">+58</span>
+                        <input id="phone" name="phone" type="tel" inputmode="numeric" pattern="[0-9]{7,10}" placeholder="Teléfono" aria-describedby="phone-help">
+                    </div>
+                    <small id="phone-help" class="help-text">Escribe tu número sin el prefijo. Ej.: 4121234567</small>
+                </div>
+
+                <!-- Correo -->
+                <div class="input-group">
+                    <label for="email">Correo electrónico</label>
+                    <input id="email" name="email" type="email" placeholder="Correo electrónico" autocomplete="email">
+                </div>
+
+                <!-- Contraseña con toggle -->
+                <div class="input-group">
+                    <label for="password">Contraseña</label>
+                    <div class="input-with-action">
+                        <input id="password" name="password" type="password" placeholder="Contraseña" autocomplete="current-password">
+                        <button type="button" class="icon-button" id="togglePassword" aria-label="Mostrar contraseña" aria-pressed="false">
+                            <svg class="icon-eye" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <svg class="icon-eye-off" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                                <path d="M3 3l18 18" stroke="currentColor" stroke-width="2"/>
+                                <path d="M10.58 10.58A3 3 0 0 0 12 15a3 3 0 0 0 2.42-4.42M9.88 5.09A10.94 10.94 0 0 1 12 5c7 0 11 7 11 7a18.1 18.1 0 0 1-5.17 5.74M6.12 6.12A18 18 0 0 0 1 12s4 7 11 7a10.82 10.82 0 0 0 3.88-.72" fill="none" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary" type="submit">Iniciar sesión</button>
+
+                <div class="auth-links">
+                    <a href="#" class="link">Crear cuenta</a>
+                    <a href="#" class="link">Olvidé mi contraseña</a>
+                </div>
+
+                <div class="divider"><span>o</span></div>
+
+                <div class="social-buttons">
+                    <button type="button" class="btn btn-outline btn-google">
+                        <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
+                            <path fill="#EA4335" d="M24 9.5c3.37 0 6.41 1.16 8.79 3.42l6.58-6.58C35.5 2.6 30.2 0 24 0 14.62 0 6.53 5.38 2.56 13.2l7.69 5.96C12.09 13.53 17.56 9.5 24 9.5z"/>
+                            <path fill="#4285F4" d="M46.1 24.55c0-1.6-.14-3.16-.41-4.65H24v8.8h12.41c-.54 2.9-2.2 5.36-4.67 7.01l7.15 5.54c4.17-3.85 6.51-9.52 6.51-16.7z"/>
+                            <path fill="#FBBC05" d="M10.25 19.16l-7.69-5.96C.93 15.6 0 19.68 0 24c0 4.26.92 8.27 2.54 11.82l7.71-5.99A14.39 14.39 0 0 1 9.5 24c0-1.69.28-3.32.75-4.84z"/>
+                            <path fill="#34A853" d="M24 48c6.2 0 11.44-2.04 15.26-5.76l-7.15-5.54c-2 1.35-4.55 2.14-8.1 2.14-6.44 0-11.9-4.03-13.75-9.66l-7.71 5.99C6.53 42.62 14.62 48 24 48z"/>
+                        </svg>
+                        <span>Continuar con Google</span>
+                    </button>
+                    <button type="button" class="btn btn-outline btn-apple">
+                        <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
+                            <path d="M33.26 25.21c.06 6.14 5.38 8.18 5.45 8.21-.04.13-.85 2.92-2.81 5.78-1.69 2.49-3.45 4.97-6.22 5.01-2.72.05-3.6-1.62-6.72-1.62s-4.1 1.58-6.7 1.67c-2.69.1-4.75-2.69-6.47-5.16-3.53-5.08-6.24-14.34-2.61-20.63 1.81-3.14 5.05-5.13 8.57-5.18 2.67-.05 5.19 1.81 6.72 1.81 1.52 0 4.63-2.23 7.81-1.9 1.32.05 5.03.53 7.41 4.02-.19.12-4.43 2.59-4.42 7.79z" fill="currentColor"/>
+                            <path d="M27.86 8.47c1.43-1.72 2.4-4.12 2.13-6.47-2.06.08-4.56 1.37-6.02 3.08-1.32 1.53-2.48 3.98-2.17 6.33 2.3.18 4.66-1.17 6.06-2.94z" fill="currentColor"/>
+                        </svg>
+                        <span>Continuar con Apple</span>
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
+    
+</body>
+ </html>
+
