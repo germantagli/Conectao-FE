@@ -1,5 +1,5 @@
 import { Topbar } from './components/Topbar/Topbar'
-import LoginPage from './pages/Login/Login'
+import Login from './pages/Login'
 import { ThemeProvider, CssBaseline } from '@mui/material'
 import theme from './theme'
 
@@ -8,7 +8,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Topbar />
-      <LoginPage />
+      <Login />
     </ThemeProvider>
   )
 }
